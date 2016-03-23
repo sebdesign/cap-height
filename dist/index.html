@@ -11,9 +11,12 @@
         google: {
           families: [ "Roboto Mono:100,300,400,500,700" ]
         },
-        fontactive: function (familyName, fvd) {
-          console.log(capHeight(familyName, fvd));
-        }
+        loading: function () {
+          capHeight.setContainer(document.body);
+        },
+        fontactive: capHeight.fontActive(function (properties) {
+          console.log(properties);
+        })
       };
 
       (function(d) {
