@@ -22,7 +22,9 @@ But most of them depend on a *cap height* ratio, which varies for every typeface
 
 ## Demo
 
-Run `dist/index.html` in your browser and open the developer tools. In the output of the console you should see a JSON object for each loaded font, with its properties. An additional `cap-height` property contains the **holy grail** of the web typography.
+See the demo on [CodePen](http://codepen.io/sebdesign/pen/EKmbGL?editors=0011). Open the CodePen console to see the output.
+
+Or run `dist/index.html` in your browser and open the developer tools. In the output of the console you should see a JSON object for each loaded font, with its properties. An additional `cap-height` property contains the **holy grail** of the web typography.
 
 In the browser window a canvas will be displayed for each loaded font with the letter *H*.
 
