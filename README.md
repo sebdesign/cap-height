@@ -1,6 +1,6 @@
 # Cap height
 
-Calculate the **cap height** of any font loaded with [Web Font Loader](https://github.com/typekit/webfontloader).
+Calculate the **cap height** of any font loaded with [Web Font Loader](https://github.com/typekit/webfontloader). See the demo on [CodePen](http://codepen.io/sebdesign/pen/EKmbGL?editors=0011).
 
 **What is the cap height?**
 
