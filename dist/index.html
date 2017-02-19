@@ -3,25 +3,39 @@
   <head>
     <meta charset="utf-8">
     <title>Cap height</title>
+    <style>
+      body {
+        background-color: #eee;
+      }
+
+      p {
+        font-family: Helvetica Neue;
+        font-size: 100px;
+        font-weight: 700;
+      }
+    </style>
   </head>
   <body>
-    <script src="bundle.js"></script>
+    <p id="title">Hey!</p>
+    <script src="https://unpkg.com/lodash@4.17.4"></script>
+    <script src="./cap-height.js"></script>
     <script>
+      capHeight.setContainer(document.body);
+
       WebFontConfig = {
         google: {
           families: [ "Roboto Mono:100,300,400,500,700" ]
-        },
-        loading: function () {
-          capHeight.setContainer(document.body);
         },
         fontactive: capHeight.fontActive(function (properties) {
           console.log(properties);
         })
       };
 
+      console.log(capHeight.inspect(document.getElementById('title')));
+
       (function(d) {
          var wf = d.createElement('script'), s = d.scripts[0];
-         wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+         wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
          s.parentNode.insertBefore(wf, s);
       })(document);
     </script>

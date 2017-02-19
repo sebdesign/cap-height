@@ -24,15 +24,13 @@ But most of them depend on a *cap height* ratio, which varies for every typeface
 
 See the demo on [CodePen](http://codepen.io/sebdesign/pen/EKmbGL?editors=0011). Open the CodePen console to see the output.
 
-Or run `dist/index.html` in your browser and open the developer tools. In the output of the console you should see a JSON object for each loaded font, with its properties. An additional `cap-height` property contains the **holy grail** of the web typography.
+Or run `dist/index.html` in your browser and open the developer tools. In the output of the console you should see a JSON object for each loaded font, with its properties. An additional `--cap-height` CSS property contains the **holy grail** of the web typography.
 
 In the browser window a canvas will be displayed for each loaded font with the letter *H*.
 
 This example loads *Roboto Mono* through *Google Fonts*; but you can use any module available in the *Web Font Loader*, like *Typekit*, *Fondeck*, *Fonts.com* or your own web fonts.
 
 > Check all the available modules: https://github.com/typekit/webfontloader#modules
-
-A more complete demo will be available soon. For real.
 
 ## How it works
 
@@ -46,10 +44,11 @@ This project is a work in progress. I’m planning to add more methods to calcul
 
 ### In a browser:
 
-Include the `dist/bundle.js` script in your document, then call the methods on the `capHeight` instance. **Don’t forget to include the Web Font Loader**.
+Include the `dist/cap-height.js` script in your document, then call the methods on the `capHeight` instance. **Don’t forget to include the Web Font Loader**.
 
 ```html
-<script src="bundle.js"></script>
+<script src="https://unpkg.com/lodash@4.17.4"></script>
+<script src="./cap-height.js"></script>
 
 <script>
   capHeight.calculate({});
@@ -63,14 +62,14 @@ $ npm install cap-height
 ```
 
 ```js
-var capHeight = require("cap-height");
+import capHeight from "capHeight";
 
 capHeight.calculate({});
 ```
 
 ## API
 
-### calculate(properties, text)
+### calculate(properties, [text=H])
 
 This is the main method which calculates the `cap-height`. The first argument is an object containing the `font-style`, `font-weight`, `font-size`, and `font-family` properties. If you omit any of these, the defaults in the example below will be used.
 
@@ -78,23 +77,23 @@ This is the main method which calculates the `cap-height`. The first argument is
 
 The second argument is optional. It defines the text that will be used to measure the cap-height. The default is *H*.
 
-The method returns the passed object along with a `cap-height` property, and any other omitted property.
+The method returns the passed object along with a `--cap-height` CSS property, and any other omitted property.
 
 ```js
 capHeight.calculate({
   "font-style": "normal",
-  "font-weight": "400",
+  "font-weight": 400,
   "font-size": "100px",
   "font-family": "serif"
 }, "HI");
 
 // Output
 {
-  font-style: "normal",
-  font-weight: 400,
-  font-size: "100px",
-  font-family: "serif",
-  cap-height: 0.66
+  "font-style": "normal",
+  "font-weight": 400,
+  "font-size": "100px",
+  "font-family": "serif",
+  "--cap-height": 0.66
 }
 ```
 

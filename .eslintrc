@@ -1,0 +1,38 @@
+{
+  'extends': 'eslint:recommended',
+  'rules': {
+    'array-callback-return': 'error',
+    'arrow-parens': ['error', 'as-needed', {
+      requireForBlockBody: true,
+    }],
+    'arrow-spacing': ['error', { before: true, after: true }],
+    'block-scoped-var': 'error',
+    'consistent-return': 'error',
+    'dot-notation': ['error', { allowKeywords: true }],
+    'dot-location': ['error', 'property'],
+    'eqeqeq': ['error', 'always', { null: 'ignore' }],
+    'no-else-return': 'error',
+    'no-loop-func': 'error',
+    'no-magic-numbers': ['error', {
+      ignore: [],
+      ignoreArrayIndexes: true,
+      enforceConst: true,
+      detectObjects: false,
+    }],
+    'no-multi-spaces': 'error',
+    'no-param-reassign': ['error', { props: true }],
+    'no-redeclare': 'error',
+    'no-return-assign': 'error',
+    'valid-jsdoc': 'warn'
+  },
+  'env': {
+    'browser': true,
+    'commonjs': true,
+    'es6': true,
+    'node': true
+  },
+  'parserOptions': {
+    'ecmaVersion': 6,
+    'sourceType': 'module'
+  }
+}
