@@ -136,6 +136,7 @@ module.exports = {
    * Set a container element to display the rendered canvases.
    *
    * @param {Node} element The node element to contain the canvases.
+   * @returns {void}
    */
   setContainer(element) {
     container = element;
@@ -238,7 +239,7 @@ const createCanvas = (dimensions, physicalDimensions) => {
  * Append the given canvas to the container element.
  *
  * @param {HTMLCanvasElement} canvas The canvas to add to the container.
- * @return void
+ * @returns {void}
  */
 const displayCanvas = (canvas) => {
   if (_.isElement(container)) {
